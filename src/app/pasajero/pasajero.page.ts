@@ -1,13 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { Injectable } from '@angular/core';
+
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-pasajero',
+  templateUrl: './pasajero.page.html',
+  styleUrls: ['./pasajero.page.scss'],
 })
-export class HomePage {
+
+@Injectable()
+export class PasajeroPage {
+
   //se crean variables 
-  
   nombre: any;
   vehiculo: any;
   patente:  any;
@@ -15,11 +20,10 @@ export class HomePage {
   asientos: any;
   precio: any;
   destino:  any;
-  //variables
 
 
- 
-  constructor() {
+
+  constructor(public navCtrl: NavController) {
     //traemos los datos guardados en el local storage
     this.nombre = localStorage.getItem('nombre');
     this.vehiculo = localStorage.getItem('vehiculo');
@@ -35,5 +39,29 @@ export class HomePage {
 
   }
 
+  ngOnInit() {
+  }
+
+  mostrarTarjeta() {
+    this.navCtrl.navigateForward('/home'); 
+  }
+
+
+
+  public alertButtons = [
+    {
+      text: 'OK',
+      role: 'confirm',
+      handler: () => {
+        console.log('Viaje reservado');
+      },
+    },
+  ];
+
+  setResult(ev: any) {
+    console.log(`Dismissed with role: ${ev.detail.role}`);
+  }
+
+ 
 
 }

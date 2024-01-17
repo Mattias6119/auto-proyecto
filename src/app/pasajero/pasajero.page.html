@@ -1,0 +1,45 @@
+<ion-header [translucent]="true"> 
+  <ion-toolbar>
+    <ion-title>Pasajero</ion-title>
+  
+    <ion-buttons slot="start">
+      <ion-back-button default-href="home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end"> <!-- Agregar un botón de búsqueda en el lado derecho -->
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+  <ion-card class="custom-card" >
+    <ion-card-content>
+      <ion-avatar>
+        <ion-img src="https://rajueditor.com/wp-content/uploads/2023/09/fotos-de-perfil-aesthetic-920x1024.jpg"></ion-img>
+      </ion-avatar>
+    <ion-card-header>
+      <ion-card-subtitle>Destino: {{destino}}<br></ion-card-subtitle>
+      <ion-card-title>Nombre: {{nombre}}</ion-card-title>
+      <!-- Otros datos del localStorage -->
+    </ion-card-header>
+    <ion-label>Vehiculo: {{vehiculo}}<br></ion-label>
+    <ion-label>Patente: {{patente}}<br></ion-label>
+    <ion-label>Telefono: {{telefono}}<br></ion-label>
+    <ion-label>Cantidad asientos disponibles: {{asientos}}<br></ion-label>
+    <ion-label>Valor pasaje: {{precio}}<br></ion-label>
+    <ion-button (click)="mostrarTarjeta"id="present-alert" routerLink="/home" expand="full">Reservar</ion-button> <!-- Agregar un botón de tipo "Reservar" -->
+    <ion-alert
+    trigger="present-alert"
+    header="Viaje reservado"
+    [buttons]="alertButtons"
+    (didDismiss)="setResult($event)"
+  ></ion-alert>
+  </ion-card-content>
+  </ion-card>
+</ion-item>
+</ion-content>
+ 
+

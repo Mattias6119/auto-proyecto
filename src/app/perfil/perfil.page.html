@@ -1,0 +1,26 @@
+<ion-header [translucent]="true"> 
+  <ion-toolbar>
+    <ion-title>Mi perfil</ion-title>
+  
+    <ion-buttons slot="start">
+      <ion-back-button default-href="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="custom-card">
+    <ion-card-header>
+      <ion-card-title>Perfil</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Nombre: {{nombre}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Email: {{correo}}</ion-label>
+      </ion-item>
+      <!-- Agregar más campos según los datos del perfil -->
+    </ion-card-content>
+  </ion-card>
+</ion-content>

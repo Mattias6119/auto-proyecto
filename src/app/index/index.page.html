@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>ViajaSeguro App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="false" class="ion-padding">
+  <div class="ion-text-center">
+    <ion-title size="large">Iniciar sesión</ion-title>
+  </div>
+
+  <ion-item>
+    <ion-label position="floating">Ingresa tu correo</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input type="password"></ion-input>
+  </ion-item>
+
+  <ion-row class="ion-justify-content-center ion-margin-top">
+    <ion-col size="8" size-md="6">
+      <ion-button color="primary" expand="block" routerLink="/home">Ingresar</ion-button>
+    </ion-col>
+    <ion-col size="8" size-md="6">
+      <ion-button color="primary" expand="block" routerLink="/login">Registrarse</ion-button>
+    </ion-col>
+  </ion-row>
+  <div class="ion-text-center" id="password-text">
+    <ion-col routerLink="/recuperar">
+      ¿Olvidaste tu contraseña?</ion-col>
+  </div>
+</ion-content>
+

@@ -1,0 +1,55 @@
+<ion-header [translucent]="true"> 
+  <ion-toolbar>
+    <ion-title>Conductor</ion-title>
+  
+    <ion-buttons slot="start">
+      <ion-back-button default-href="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+<ion-card-content>
+  <form #miForm="ngForm" (ngSubmit)="onSubmit()" FormGroup="miFormulario">
+      <ion-toolbar>
+        <ion-title size="medium">Crear viaje</ion-title>
+      </ion-toolbar>
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input aria-label="nombre" [(ngModel)]="viaje.nombre" name="nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Vehiculo</ion-label>
+      <ion-input aria-label="vehiculo" [(ngModel)]="viaje.vehiculo" name="vehiculo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Patente</ion-label>
+      <ion-input aria-label="patente" [(ngModel)]="viaje.patente" name="patente"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Teléfono</ion-label>
+      <ion-input aria-label="telefono" [(ngModel)]="viaje.telefono" name="telefono"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Asientos</ion-label>
+      <ion-input aria-label="asientos" [(ngModel)]="viaje.asientos" name="asientos"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Precio</ion-label>
+      <ion-input aria-label="precio" [(ngModel)]="viaje.precio" name="precio"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Destino</ion-label>
+      <ion-input aria-label="destino" [(ngModel)]="viaje.destino" name="destino"></ion-input>
+    </ion-item>
+    <ion-button color="primary"  (click)="onSubmit()" id="present-alert" routerLink="/home" >Registrar viaje</ion-button> 
+    <ion-alert
+    trigger="present-alert"
+    header="Registro exitoso!"
+    [buttons]="alertButtons"
+    (didDismiss)="setResult($event)"
+  ></ion-alert>
+  </form>
+</ion-card-content>
+</ion-content>

@@ -1,0 +1,12 @@
+#password-text {
+    ion-col {
+      color: white; // Color inicial del texto
+      transition: color 0.3s; // Agrega una transición suave al cambio de color
+    }
+  
+    &:hover {
+      ion-col {
+        color: cornflowerblue; // Cambia el color del texto al pasar el cursor sobre él
+      }
+    }
+  }

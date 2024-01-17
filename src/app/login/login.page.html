@@ -1,0 +1,40 @@
+<ion-header [translucent]="true"> 
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+  
+    <ion-buttons slot="start">
+      <ion-back-button default-href="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+
+  <form #miForm="ngForm" (ngSubmit)="onSubmit()" FormGroup="miUsuario">
+      <ion-toolbar>
+        <ion-title size="medium">Crear usuario</ion-title>
+      </ion-toolbar>
+    <ion-item>
+      <ion-label position="floating">Nombre Usuario</ion-label>
+      <ion-input aria-label="usuario" [(ngModel)]="ingreso.usuario" name="usuario"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Correo</ion-label>
+      <ion-input aria-label="correo" [(ngModel)]="ingreso.correo" name="correo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" aria-label="pass" [(ngModel)]="ingreso.pass" name="pass"></ion-input>
+    </ion-item>
+    
+
+    <ion-button color="primary"  (click)="onSubmit()" id="present-alert" routerLink="/index" >Crear usuario</ion-button> 
+    <ion-alert
+    trigger="present-alert"
+    header="Usuario creado"
+    [buttons]="alertButtons"
+    (didDismiss)="setResult($event)"
+  ></ion-alert>
+  </form>
+</ion-content>

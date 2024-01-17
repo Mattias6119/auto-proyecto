@@ -1,0 +1,36 @@
+<ion-header [translucent]="true"> 
+  <ion-toolbar>
+    <ion-title>Recuperar</ion-title>
+  
+    <ion-buttons slot="start">
+      <ion-back-button default-href="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+
+  <form #miForm="ngForm" (ngSubmit)="onSubmit()" FormGroup="Recuperar">
+      <ion-toolbar>
+        <ion-title size="medium">Recuperar</ion-title>
+      </ion-toolbar>
+    <ion-item>
+      <ion-label position="floating">Nueva contraseña</ion-label>
+      <ion-input type="password" aria-label="password" [(ngModel)]="restore.password" name="pass"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Repetir nueva contraseña</ion-label>
+      <ion-input type="password" aria-label="newpassword" [(ngModel)]="restore.newpassword" name="pass"></ion-input>
+    </ion-item>
+    
+
+    <ion-button color="primary"  (click)="onSubmit()" id="present-alert" routerLink="/index" >Aceptar</ion-button> 
+    <ion-alert
+    trigger="present-alert"
+    header="Contraseña cambiada de forma correcta."
+    [buttons]="alertButtons"
+    (didDismiss)="setResult($event)"
+  ></ion-alert>
+  </form>
+</ion-content>
